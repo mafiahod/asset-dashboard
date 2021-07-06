@@ -20,16 +20,16 @@ const multicall = async (abi: any[], calls: Call[], options: MulticallOptions = 
   try {
     const multi = getMulticallContract(options.web3 || web3NoAccount)
     const itf = new Interface(abi)
-    console.log(web3NoAccount)
+    
 
     const calldata = calls.map((call) => [call.address.toLowerCase(), itf.encodeFunctionData(call.name, call.params)])
-    console.log('caldata',calldata)
+  //  console.log('calldata',calldata)
     const { returnData } = await multi.methods.aggregate(calldata).call(undefined, options.blockNumber)
+    // console.log(returnData)
     const res = returnData.map((call, i) => {
-      console.log(call[i].name)
+     
       return itf.decodeFunctionResult(calls[i].name, call)})
-//console.log("object",returnData,res)
-console.log(res)
+
     return res
   } catch (error) {
     throw new Error(error)

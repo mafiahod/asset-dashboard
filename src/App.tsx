@@ -5,6 +5,10 @@ import { getjamBalance1, getjamBalance2 } from 'utils/addressHelpers'
 import cakeABI from 'config/abi/testJam.json'
 import './style/app.css';
 import BigNumber from 'bignumber.js';
+import Farmdashboard from 'components/farmdashboard';
+import UserInfo from 'components/userInfo';
+import PendingReward from 'components/pendingReward';
+import Tokenbalance from 'components/tokenbalance';
 
 function App() {
   const [balances, setBalance] = useState([])
@@ -30,33 +34,37 @@ function App() {
         name: 'balanceOf',
         params: ['0x85d886a282C463e4C8C9292cED78f610aE88683b']
       }]
-      console.log(calls);
+    
       const res = await multicall(cakeABI, calls)
       const parsedTokenBalances = res.map((tokenBalance) => {
         return new BigNumber(tokenBalance).toJSON()
       })
-      console.log(parsedTokenBalances);
+      // console.log(parsedTokenBalances);
       setBalance(parsedTokenBalances);
     }
 
-    if (true) {
+    if (false) {
       fetchAllBalances()
     }
 
-    console.log(account);
+    // console.log(account);
   }, [account])
 
   return (
     <div >
-
-      {balances[0]}
+<PendingReward/>
+      {/* {balances[0]}
       <br />
       {balances[1]}
       <br />
       {balances[2]}
       <br />
-      {balances[3]}
-
+      {balances[3]} */}
+     
+   <Farmdashboard/>
+ <UserInfo/>
+ 
+ {/* <Tokenbalance/> */}
     </div>
   );
 }

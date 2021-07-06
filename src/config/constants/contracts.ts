@@ -3,6 +3,10 @@ export default {
       97: '0x1d32c2945C8FDCBc7156c553B7cEa4325a17f4f9',
       56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
     },
+    masterchef_dopple:{
+      97:'',
+      56:'0xDa0a175960007b0919DBF11a38e6EC52896bddbE'
+    },
     sousChef: {
       97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
       56: '0x6ab8463a4185b80905e05a9ff80a2d6b714b9e95',
@@ -21,7 +25,7 @@ export default {
     },
     multiCall: {
       97: '0xceBd462e1Ab91B648372D1BC507E712B8c4c9AbB',
-      56: '0xfF6FD90A470Aaa0c1B8A54681746b07AcdFedc9B',
+      56: '0x1Ee38d535d541c55C9dae27B12edf090C608E6Fb',
     },
     pancakeProfile: {
       56: '0xDf4dBf6536201370F95e06A0F8a7a70fE40E388a',

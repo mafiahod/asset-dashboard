@@ -29,6 +29,6 @@ export const getDefaultGasPrice = () => {
     })
   }
   export const getMulticallContract = (web3?: Web3) => {
-    console.log(getMulticallAddress())
+    // console.log(getMulticallAddress())
     return getContract(MultiCallAbi, getMulticallAddress(), web3)
   }

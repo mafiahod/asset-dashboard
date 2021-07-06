@@ -5,7 +5,7 @@ import { Address } from '../config/constants/types'
 
 
 export const getAddress = (address: Address): string => {
-    const chainId = '97'
+    const chainId = '56'
   
     return address[chainId] ? address[chainId] : address[MAINNET_CHAIN_ID]
   }
@@ -20,4 +20,11 @@ export const getjamBalance1 = () => {
 
 export const getjamBalance2 = () => {
     return getAddress(addresses.jamBalance2)
+  }
+  export const getMasterChefAddress = () => {
+    return getAddress(addresses.masterChef)
+  }
+
+  export const getMasterChefDoppleAddress = () => {
+    return getAddress(addresses.masterchef_dopple)
   }

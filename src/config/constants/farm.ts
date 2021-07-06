@@ -15,6 +15,8 @@ const farms: FarmConfig[] = [
     token: tokens.syrup,
     quoteToken: tokens.wbnb,
   },
+
+  
   {
     pid: 251,
     lpSymbol: 'CAKE-BNB LP',
