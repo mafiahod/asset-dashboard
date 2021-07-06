@@ -33,7 +33,7 @@ useEffect(() => {
   }
 
  
-  if('0x5802d51e2D4CD93a1986FcE1b96C2c951801f720'){
+  if(true){
 fetchFarmUserEarnings('0x5802d51e2D4CD93a1986FcE1b96C2c951801f720', farmsToFetch);
   }
 
