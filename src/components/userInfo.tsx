@@ -32,7 +32,6 @@ const fetchFarmUserStakedBalances = async (account: string) => {
    setLPBalance(parsedStakedBalances)
   }
 
-
 fetchFarmUserStakedBalances('0x5802d51e2D4CD93a1986FcE1b96C2c951801f720')
 }, [refresh])
 return (

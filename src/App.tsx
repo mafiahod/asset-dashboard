@@ -5,7 +5,7 @@ import { getjamBalance1, getjamBalance2 } from 'utils/addressHelpers'
 import cakeABI from 'config/abi/testJam.json'
 import './style/app.css';
 import BigNumber from 'bignumber.js';
-import Farmdashboard from 'components/farmdashboard';
+import PoolInfo from 'components/poolInfo';
 import UserInfo from 'components/userInfo';
 import PendingReward from 'components/pendingReward';
 import Tokenbalance from 'components/tokenbalance';
@@ -61,7 +61,7 @@ function App() {
       <br />
       {balances[3]} */}
      
-   <Farmdashboard/>
+   <PoolInfo/>
  <UserInfo/>
  
  {/* <Tokenbalance/> */}
