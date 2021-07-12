@@ -25,3 +25,9 @@ export interface FarmConfig {
       endBlock: number
     }
   }
+
+  export interface Token2{
+    symbol: string
+    address?:Address
+    decimals:number
+  }
