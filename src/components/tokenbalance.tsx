@@ -17,28 +17,13 @@ useEffect(() => {
             address: getjamBalance2(),
             name: 'balanceOf',
             params: [account],
-          },
-        {         
-            address: getjamBalance1(),
-            name: 'balanceOf',
-            params: ['0x85d886a282C463e4C8C9292cED78f610aE88683b'],
-          },
-          {         
-            address: getjamBalance2(),
-            name: 'balanceOf',
-            params: ['0x85d886a282C463e4C8C9292cED78f610aE88683b'],
-          },
-          {         
-            address: getjamBalance2(),
-            name: 'balanceOf',
-            params: ['0x4ec3261CC5524AA3175F539489C3830c7466CaB2'],
           }
     ]
     const rawTokenBalances = await multicall(erc20ABI, calls)
     const parsedTokenBalances = rawTokenBalances.map((tokenBalance) => {
         return new BigNumber(tokenBalance).toJSON()
       })
-    console.log(parsedTokenBalances   );
+    console.log(parsedTokenBalances);
 }
 if(account){
     fetchBalanceWallet()

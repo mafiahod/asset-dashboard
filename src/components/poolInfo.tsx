@@ -14,7 +14,7 @@ export default function Farmdashboard() {
     const farmsToFetch = farmsConfig.filter((farmConfig) => pids.includes(farmConfig.pid))
 useEffect(() => {
     
-  const fetchFarmUserEarnings = async (account: string, farmsToFetch: FarmConfig[]) => {
+  const fetchFarmUserEarnings = async (farmsToFetch: FarmConfig[]) => {
     const masterChefAddress = getMasterChefAddress();
   
     const rawEarnings = await multicall(masterchefABI, [{
@@ -24,7 +24,7 @@ useEffect(() => {
     }])
 
 
-    console.log(rawEarnings[0]);
+    console.log(rawEarnings);
     
     const parsedEarnings = rawEarnings ? new BigNumber(rawEarnings[0].allocPoint?._hex) : BIG_ZERO
     setstate(parsedEarnings.div(100).toString())
@@ -34,7 +34,7 @@ useEffect(() => {
 
  
   if(true){
-fetchFarmUserEarnings('0x5802d51e2D4CD93a1986FcE1b96C2c951801f720', farmsToFetch);
+fetchFarmUserEarnings(farmsToFetch);
   }
 
 }, [refresh])
